@@ -42,6 +42,11 @@ function printHTML(html) {
   scrollToBottom();
 }
 
+function appendNode(node) {
+  output.appendChild(node);
+  scrollToBottom();
+}
+
 function printPromptEcho(cmd) {
   const el = document.createElement('span');
   el.className = 'line';
@@ -78,6 +83,80 @@ function list(items) {
     ul.appendChild(li);
   });
   return ul.outerHTML;
+}
+
+// ============================================================
+// Certification badges — generic seal-style SVG, no vendor logos
+// ============================================================
+const CERTS = [
+  { acronym: 'WX-1',  name: 'Web Exploitation Track', status: 'done' },
+  { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress' },
+  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done' },
+  { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done' },
+  { acronym: 'DEP',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'done' },
+];
+
+function badgeSVG(acronym) {
+  return `
+<svg viewBox="0 0 90 112" width="70" height="88" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="45" cy="40" r="31" stroke-dasharray="3 4" opacity="0.55"/>
+    <circle cx="45" cy="40" r="24"/>
+  </g>
+  <text x="45" y="45" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="currentColor">${acronym}</text>
+  <path d="M30 61 L19 103 L45 90 L71 103 L60 61" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity="0.9"/>
+</svg>`;
+}
+
+function renderBadgeMarquee(certs) {
+  const container = document.createElement('div');
+  container.className = 'badge-marquee';
+  container.tabIndex = 0;
+  container.setAttribute(
+    'aria-label',
+    'Certification badges. Hover and move your mouse left or right to scrub through them, or leave it alone to auto-scroll.'
+  );
+
+  const track = document.createElement('div');
+  track.className = 'badge-track';
+
+  const itemsHTML = certs.map(c => `
+    <div class="badge-item ${c.status === 'in-progress' ? 'in-progress' : ''}">
+      ${badgeSVG(c.acronym)}
+      <span class="badge-label">${c.name}</span>
+    </div>
+  `).join('');
+  // Duplicate the set so the auto-scroll loop is seamless at translateX(-50%).
+  track.innerHTML = itemsHTML + itemsHTML;
+  container.appendChild(track);
+
+  // Mouse-driven scrubbing: while hovering, the track's horizontal position
+  // tracks the cursor directly instead of auto-scrolling. Leaving the strip
+  // hands control back to the CSS auto-scroll animation.
+  let hovering = false;
+
+  function scrubTo(clientX) {
+    const rect = container.getBoundingClientRect();
+    const pct = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+    const maxShift = Math.max(track.scrollWidth / 2 - rect.width, 0);
+    track.style.transform = `translateX(${-pct * maxShift}px)`;
+  }
+
+  container.addEventListener('mouseenter', (e) => {
+    hovering = true;
+    track.style.animation = 'none';
+    scrubTo(e.clientX);
+  });
+  container.addEventListener('mousemove', (e) => {
+    if (hovering) scrubTo(e.clientX);
+  });
+  container.addEventListener('mouseleave', () => {
+    hovering = false;
+    track.style.animation = '';
+    track.style.transform = '';
+  });
+
+  return container;
 }
 
 // ============================================================
@@ -253,13 +332,11 @@ const commands = {
   certs() {
     printLine('cat certifications.txt', 'dim');
     printBlank();
-    printHTML(table([
-      ['[DONE]', 'Offensive Security Path — Web Exploitation Track'],
-      ['[PROG]', 'Red Team Operator Training'],
-      ['[DONE]', 'Cloud Pentest Foundations'],
-      ['[DONE]', 'Practical Ethical Hacking — Full Course'],
-      ['[DONE]', 'Detection Engineering — SIEM &amp; Threat Hunting'],
-    ]));
+    appendNode(renderBadgeMarquee(CERTS));
+    printHTML(table(CERTS.map(c => [
+      c.status === 'done' ? '[DONE]' : '[PROG]',
+      c.name,
+    ])));
     printBlank();
   },
 
