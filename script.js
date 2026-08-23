@@ -8,7 +8,7 @@ const themeLabel = document.getElementById('themeLabel');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const VALID_THEMES = ['green', 'amber', 'blue', 'red'];
-const savedTheme = localStorage.getItem('cipher-theme');
+const savedTheme = localStorage.getItem('pr0sp3r0-theme');
 if (savedTheme && VALID_THEMES.includes(savedTheme)) {
   document.documentElement.setAttribute('data-theme', savedTheme);
 }
@@ -216,7 +216,7 @@ const bootLines = [
   { t: 'initializing secure shell ...',            d: 200 },
   { t: 'negotiating handshake .......... [ OK ]',  d: 180 },
   { t: 'loading identity ............... [ OK ]',  d: 160 },
-  { t: 'mounting /home/cipher ........... [ OK ]',  d: 140 },
+  { t: 'mounting /home/pr0sp3r0 ........... [ OK ]',  d: 140 },
   { t: 'checking for known exploits ..... [ NONE FOUND ]', d: 220, cls: 'dim' },
   { t: 'connection established.',                  d: 260, cls: 'accent' },
 ];
@@ -296,10 +296,10 @@ const commands = {
 
   whoami() {
     printHTML(table([
-      ['uid', '1000(cipher)'],
+      ['uid', '1000(pr0sp3r0)'],
       ['gid', '1000(redteam)'],
       ['groups', '1000(redteam), 27(sudo — revoked)'],
-      ['handle', 'cipher'],
+      ['handle', 'pr0sp3r0'],
       ['name', 'Jordan Cole'],
       ['role', 'Penetration Tester / Red Team Operator'],
       ['based', 'Austin, TX (remote-friendly)'],
@@ -363,7 +363,7 @@ const commands = {
       `<span class="file-name">detection-notebook/</span> <span class="file-desc">Mapping offensive techniques to Sigma detection rules</span>`,
       `<span class="file-name">automation-toolkit/</span> <span class="file-desc">Python CLI utilities for auth testing &amp; enumeration</span>`,
     ]));
-    printLine('→ full source: <a class="link" href="#" target="_blank" rel="noopener">github.com/cipher</a>', '');
+    printLine('→ full source: <a class="link" href="#" target="_blank" rel="noopener">github.com/pr0sp3r0</a>', '');
     printBlank();
   },
 
@@ -375,7 +375,7 @@ const commands = {
       `<span class="file-name">2026-08-10-chained-web-exp.md</span>  <span class="file-desc">Exposed API to authenticated RCE via chained misconfigs</span>`,
       `<span class="file-name">2026-08-08-wifi-field-notes.md</span> <span class="file-desc">Wireless recon &amp; WPA/WPA2 lab testing workflow</span>`,
     ]));
-    printLine('→ read more: <a class="link" href="#" target="_blank" rel="noopener">cipher.dev/writeups</a>', '');
+    printLine('→ read more: <a class="link" href="#" target="_blank" rel="noopener">pr0sp3r0.dev/writeups</a>', '');
     printBlank();
   },
 
@@ -394,8 +394,8 @@ const commands = {
     printLine('contact --info', 'dim');
     printBlank();
     printHTML(table([
-      ['email', '<a class="link" href="mailto:cipher@example.com">cipher@example.com</a>'],
-      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/cipher</a>'],
+      ['email', '<a class="link" href="mailto:pr0sp3r0@example.com">pr0sp3r0@example.com</a>'],
+      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/pr0sp3r0</a>'],
       ['linkedin', '<a class="link" href="#" target="_blank" rel="noopener">linkedin.com/in/jordan-cole</a>'],
       ['pgp', '4A3F 9C21 8B0D 77E4 12FA  9931 0CDE 55A2 66F1 90B3'],
     ]));
@@ -416,7 +416,7 @@ const commands = {
       return;
     }
     document.documentElement.setAttribute('data-theme', name);
-    localStorage.setItem('cipher-theme', name);
+    localStorage.setItem('pr0sp3r0-theme', name);
     themeLabel.textContent = name;
     printLine(`theme set to ${name}.`, 'accent');
     printBlank();
@@ -449,7 +449,7 @@ const commands = {
   },
 
   sudo() {
-    printLine('cipher is not in the sudoers file. This incident will be reported.', 'err');
+    printLine('pr0sp3r0 is not in the sudoers file. This incident will be reported.', 'err');
     printLine('(it will not actually be reported. nice try though.)', 'dim');
     printBlank();
   },
