@@ -51,7 +51,7 @@ function printPromptEcho(cmd) {
   const el = document.createElement('span');
   el.className = 'line';
   el.innerHTML =
-    `<span class="prompt-user">cipher</span><span class="prompt-at">@</span>` +
+    `<span class="prompt-user">pr0sp3r0</span><span class="prompt-at">@</span>` +
     `<span class="prompt-host">shell</span><span class="prompt-colon">:</span>` +
     `<span class="prompt-path">~</span><span class="prompt-dollar">$</span> ${escapeHTML(cmd)}`;
   output.appendChild(el);
@@ -229,8 +229,8 @@ function runBoot(done) {
 
 function printBanner() {
   printHTML(`<div class="ascii-banner">CIPHER://</div>`);
-  printLine('Jordan "Cipher" Cole — Penetration Tester / Red Team Operator', 'tagline');
-  printLine("Austin, TX (remote-friendly)  ·  status: available for engagements", 'dim');
+  printLine('Ramiro "Pr0sp3r0" Macias — Penetration Tester / Red Team Operator', 'tagline');
+  printLine("Toronto, ON (remote-friendly)  ·  status: available for engagements", 'dim');
   printBlank();
   printLine("Type 'help' to see available commands, or tap a button below.", 'dim');
   printBlank();
@@ -361,9 +361,9 @@ const commands = {
     printLine('contact --info', 'dim');
     printBlank();
     printHTML(table([
-      ['email', '<a class="link" href="mailto:cipher@example.com">cipher@example.com</a>'],
-      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/cipher</a>'],
-      ['linkedin', '<a class="link" href="#" target="_blank" rel="noopener">linkedin.com/in/jordan-cole</a>'],
+      ['email', '<a class="link" href="mailto:cipher@example.com">ramiromacias221@example.com</a>'],
+      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/RMaciasF</a>'],
+      ['linkedin', '<a class="link" href="#" target="_blank" rel="noopener">linkedin.com/in/r4m1r0m4c1a5</a>'],
       ['pgp', '4A3F 9C21 8B0D 77E4 12FA  9931 0CDE 55A2 66F1 90B3'],
     ]));
     printBlank();
