@@ -303,8 +303,8 @@ kbd {
 }
 
 .badge-item.in-progress {
-  color: var(--warn);
-  text-shadow: 0 0 6px color-mix(in srgb, var(--warn) 45%, transparent);
+  color: var(--fg-dim);
+  text-shadow: none;
 }
 
 .badge-item svg { display: block; }
@@ -315,16 +315,29 @@ kbd {
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 0 6px color-mix(in srgb, var(--fg) 45%, transparent));
+  transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
 .badge-item.in-progress .badge-img {
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--warn) 45%, transparent));
+  filter: grayscale(1) brightness(0.4) contrast(0.9);
+  opacity: 0.65;
+}
+
+/* Hover an in-progress badge to preview it at full color/brightness. */
+.badge-item.in-progress:hover .badge-img {
+  filter: grayscale(0.4) brightness(0.75);
+  opacity: 0.9;
 }
 
 .badge-fallback {
   display: block;
   width: 72px;
   height: 72px;
+}
+
+.badge-item.in-progress .badge-fallback {
+  filter: grayscale(1) brightness(0.7);
+  opacity: 0.65;
 }
 
 .badge-label {
