@@ -118,8 +118,8 @@ body {
 }
 
 .term-window {
-  width: min(920px, 100%);
-  height: min(680px, 88vh);
+  width: min(1240px, 97vw);
+  height: min(840px, 92vh);
   background: rgba(4, 8, 5, 0.92);
   border: 1px solid var(--fg-dim);
   border-radius: 8px;
@@ -259,8 +259,67 @@ kbd {
   color: var(--fg);
 }
 
+/* =========================================================
+   Certification badge marquee
+   ========================================================= */
+.badge-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 6px 0 16px;
+  cursor: ew-resize;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+
+.badge-track {
+  display: flex;
+  gap: 34px;
+  width: max-content;
+  animation: badge-scroll 34s linear infinite;
+}
+
+/* Keyboard-focus fallback (no mouse to scrub with): just pause in place. */
+.badge-marquee:focus-within .badge-track {
+  animation-play-state: paused;
+}
+
+@keyframes badge-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-track { animation: none; }
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  color: var(--fg);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--fg) 45%, transparent);
+}
+
+.badge-item.in-progress {
+  color: var(--warn);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--warn) 45%, transparent);
+}
+
+.badge-item svg { display: block; }
+
+.badge-label {
+  font-size: 10.5px;
+  color: var(--fg-dim);
+  text-align: center;
+  max-width: 96px;
+  line-height: 1.3;
+  text-shadow: none;
+}
+
 .quick-bar {
-  width: min(920px, 100%);
+  width: min(1240px, 97vw);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
