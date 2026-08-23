@@ -90,10 +90,10 @@ function list(items) {
 // ============================================================
 const CERTS = [
   { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png' },
-  { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg' },
+  { acronym: 'CCSK',  name: 'Certificate of Cloud Security Knowledge', status: 'done', image: 'badges/CCSK.png' },
   { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg' },
-  { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/pos.svg' },
-  { acronym: 'DEP',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'done', image: 'badges/dep.svg' },
+  { acronym: 'OSCP',   name: 'OffSec Certified Professional', status: 'In-Progress', image: 'badges/OSCP.png' },
+  { acronym: 'CTPS',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'In-Progress', image: 'badges/CTPS.png' },
 ];
 
 // Fallback shown inline if a badge image file is missing (404) — keeps the
