@@ -261,7 +261,7 @@ function runBoot(done) {
 }
 
 function printBanner() {
-  printHTML(`<div class="ascii-banner">pr0sp3r0://</div>`);
+  printHTML(`<div class="ascii-banner"> pr0sp3r0://</div>`);
   printLine('Ramiro "Pr0sp3r0" Macias — Penetration Tester / Red Team Operator', 'tagline');
   printLine("Toronto, ON (remote-friendly)  ·  status: available for engagements", 'dim');
   printBlank();
