@@ -118,8 +118,8 @@ body {
 }
 
 .term-window {
-  width: min(1240px, 97vw);
-  height: min(840px, 92vh);
+  width: min(1520px, 98vw);
+  height: min(940px, 95vh);
   background: rgba(0, 0, 0, 0.94);
   border: 1px solid var(--fg-dim);
   border-radius: 8px;
@@ -429,7 +429,7 @@ kbd {
 }
 
 .quick-bar {
-  width: min(1240px, 97vw);
+  width: min(1520px, 98vw);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
