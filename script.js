@@ -262,8 +262,8 @@ function runBoot(done) {
 
 function printBanner() {
   printHTML(`<div class="ascii-banner">CIPHER://</div>`);
-  printLine('Jordan "Cipher" Cole — Penetration Tester / Red Team Operator', 'tagline');
-  printLine("Austin, TX (remote-friendly)  ·  status: available for engagements", 'dim');
+  printLine('Ramiro "Pr0sp3r0" Macias — Penetration Tester / Red Team Operator', 'tagline');
+  printLine("Toronto, ON (remote-friendly)  ·  status: available for engagements", 'dim');
   printBlank();
   printLine("Type 'help' to see available commands, or tap a button below.", 'dim');
   printBlank();
