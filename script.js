@@ -89,24 +89,18 @@ function list(items) {
 // Certification badges — generic seal-style SVG, no vendor logos
 // ============================================================
 const CERTS = [
-  { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png',
+  { acronym: 'A+',  name: 'Web Exploitation Track', status: 'done', image: 'badges/A+.png',
     url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
   { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg',
     url: '' },
-  { acronym: 'CCSK',  name: 'Certificate of Cloud Security Knowledge', status: 'done', image: 'badges/CCSK.png',
-    url: 'https://www.credly.com/badges/01291845-f6b2-48db-97fd-b284561694f5' },
-  { acronym: 'OSCP',   name: 'OffSec Certified Professional', status: 'in-progress', image: 'badges/OSCP.png' ,
-    url: '' },
-  {acronym: 'CTPS',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'in-progress', image: 'badges/CTPS.png',
+  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000002' },
+  { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/CTPS.png',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000003' },
+  { acronym: 'DEP',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'done', image: 'badges/dep.svg',
     url: '' },
 ];
-const CERTS = [
-  {  },
-  { },
-  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg' },
-  { ,
-  {  },
-];
+
 // Fallback shown inline if a badge image file is missing (404) — keeps the
 // layout intact instead of showing a broken-image icon.
 function badgeFallbackSVG(acronym) {
