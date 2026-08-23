@@ -51,7 +51,7 @@ function printPromptEcho(cmd) {
   const el = document.createElement('span');
   el.className = 'line';
   el.innerHTML =
-    `<span class="prompt-user">cipher</span><span class="prompt-at">@</span>` +
+    `<span class="prompt-user">pr0sp3r0</span><span class="prompt-at">@</span>` +
     `<span class="prompt-host">shell</span><span class="prompt-colon">:</span>` +
     `<span class="prompt-path">~</span><span class="prompt-dollar">$</span> ${escapeHTML(cmd)}`;
   output.appendChild(el);
