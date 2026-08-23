@@ -89,7 +89,7 @@ function list(items) {
 // Certification badges — generic seal-style SVG, no vendor logos
 // ============================================================
 const CERTS = [
-  { acronym: 'WX-1',  name: 'Web Exploitation Track', status: 'done', image: 'badges/wx1.svg' },
+  { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png' },
   { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg' },
   { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg' },
   { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/pos.svg' },
