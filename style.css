@@ -316,7 +316,7 @@ kbd {
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 0 6px color-mix(in srgb, var(--fg) 45%, transparent));
-  transition: filter 0.25s ease, opacity 0.25s ease;
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.2s ease;
 }
 
 .badge-item.in-progress .badge-img {
@@ -383,6 +383,49 @@ kbd {
   max-width: 96px;
   line-height: 1.3;
   text-shadow: none;
+}
+
+.badge-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.badge-link:hover .badge-img,
+.badge-link:focus-visible .badge-img {
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--fg) 65%, transparent));
+  transform: translateY(-2px);
+}
+
+.badge-item.in-progress .badge-link:hover .badge-img,
+.badge-item.in-progress .badge-link:focus-visible .badge-img {
+  transform: none;
+}
+
+.badge-link:hover .badge-label,
+.badge-link:focus-visible .badge-label {
+  color: var(--fg);
+}
+
+.badge-link:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+.badge-link-inert {
+  cursor: default;
+}
+
+.badge-link-inert:hover .badge-img,
+.badge-link-inert:hover .badge-label {
+  filter: none;
+  transform: none;
+  color: var(--fg-dim);
 }
 
 .quick-bar {
