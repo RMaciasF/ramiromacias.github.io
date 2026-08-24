@@ -8,7 +8,7 @@ const themeLabel = document.getElementById('themeLabel');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const VALID_THEMES = ['green', 'amber', 'blue', 'red'];
-const savedTheme = localStorage.getItem('pr0sp3r0-theme');
+const savedTheme = localStorage.getItem('cipher-theme');
 if (savedTheme && VALID_THEMES.includes(savedTheme)) {
   document.documentElement.setAttribute('data-theme', savedTheme);
 }
@@ -51,7 +51,7 @@ function printPromptEcho(cmd) {
   const el = document.createElement('span');
   el.className = 'line';
   el.innerHTML =
-    `<span class="prompt-user">pr0sp3r0</span><span class="prompt-at">@</span>` +
+    `<span class="prompt-user">cipher</span><span class="prompt-at">@</span>` +
     `<span class="prompt-host">shell</span><span class="prompt-colon">:</span>` +
     `<span class="prompt-path">~</span><span class="prompt-dollar">$</span> ${escapeHTML(cmd)}`;
   output.appendChild(el);
@@ -89,28 +89,16 @@ function list(items) {
 // Certification badges — generic seal-style SVG, no vendor logos
 // ============================================================
 const CERTS = [
-  { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png',
-    url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
-   { acronym: 'CySA+',  name: 'CompTIA CySA+', status: 'done', image: 'badges/CySA+.png',
-    url: 'https://www.credly.com/badges/1a16b760-e1b2-418c-8756-26edb78af781' },
-  { acronym: 'CPTS',  name: 'HTB Certified Penetration Testing Specialist', status: 'in-progress', image: 'badges/CPTS.png',
+  { acronym: 'WX-1',  name: 'Web Exploitation Track', status: 'done', image: 'badges/wx1.svg',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000001' },
+  { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg',
     url: '' },
-   { acronym: 'CCNA',  name: 'Cisco Certified Network Associate', status: 'in-progress', image: 'badges/CCNA.png',
-    url: '' },
-  { acronym: 'SecurityX',   name: 'CompTIA SecurityX (CASP+)', status: 'done', image: 'badges/SecurityX.png',
-    url: 'https://www.credly.com/badges/fa441899-f433-4bee-8b5e-84b71be45f95' },
-   { acronym: 'eWPT',   name: 'Web Penetration Tester', status: 'done', image: 'badges/eWPT.svg',
-    url: 'https://certs.ine.com/43193ba4-0982-41ef-bd27-111d1d4157ab#acc.dHha12tE' },
-  { acronym: 'Security+',   name: 'CompTIA Security+', status: 'done', image: 'badges/Security+.png',
-    url: 'https://www.credly.com/badges/4037d0a9-6790-4b8c-b04c-b374d5ec27c9' },
-  { acronym: 'CCSK',   name: 'Certificate of Cloud Security Knowledge', status: 'done', image: 'badges/CCSK.png',
-    url: 'https://www.credly.com/badges/01291845-f6b2-48db-97fd-b284561694f5' },
-  { acronym: 'Pentest+',   name: 'CompTIA Pentest+', status: 'done', image: 'badges/Pentest+.png',
-    url: 'https://www.credly.com/badges/4a4a39b2-53d4-452e-934f-eae9ca1048ca' },
-  { acronym: 'CEH(Practical)',   name: 'Certified Ethical Hacker (Practical)', status: 'done', image: 'badges/CEH(Practical).png',
-    url: 'https://aspen.eccouncil.org/VerifyBadge?type=certification&a=YoXmFJcgHlD9WFZZGFJfDRPWKCFabqAIfw5ppIMq8yc=' },
-  { acronym: 'eJPT',   name: 'Junior Penetration Tester', status: 'done', image: 'badges/eJPT.svg',
-    url: 'https://certs.ine.com/71c5d2aa-9503-46b1-829b-a6307f0f7067#acc.K4MICrox' },
+  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000002' },
+  { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/pos.svg',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000003' },
+  { acronym: 'DEP',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'done', image: 'badges/dep.svg',
+    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000004' },
 ];
 
 // Fallback shown inline if a badge image file is missing (404) — keeps the
@@ -216,7 +204,7 @@ const bootLines = [
   { t: 'initializing secure shell ...',            d: 200 },
   { t: 'negotiating handshake .......... [ OK ]',  d: 180 },
   { t: 'loading identity ............... [ OK ]',  d: 160 },
-  { t: 'mounting /home/pr0sp3r0 ........... [ OK ]',  d: 140 },
+  { t: 'mounting /home/cipher ........... [ OK ]',  d: 140 },
   { t: 'checking for known exploits ..... [ NONE FOUND ]', d: 220, cls: 'dim' },
   { t: 'connection established.',                  d: 260, cls: 'accent' },
 ];
@@ -261,9 +249,9 @@ function runBoot(done) {
 }
 
 function printBanner() {
-  printHTML(`<div class="ascii-banner">pr0sp3r0://</div>`);
-  printLine('Ramiro "Pr0sp3r0" Macias — Penetration Tester / Red Team Operator', 'tagline');
-  printLine("Toronto, ON (remote-friendly)  ·  status: available for engagements", 'dim');
+  printHTML(`<div class="ascii-banner">CIPHER://</div>`);
+  printLine('Jordan "Cipher" Cole — Penetration Tester / Red Team Operator', 'tagline');
+  printLine("Austin, TX (remote-friendly)  ·  status: available for engagements", 'dim');
   printBlank();
   printLine("Type 'help' to see available commands, or tap a button below.", 'dim');
   printBlank();
@@ -296,10 +284,10 @@ const commands = {
 
   whoami() {
     printHTML(table([
-      ['uid', '1000(pr0sp3r0)'],
+      ['uid', '1000(cipher)'],
       ['gid', '1000(redteam)'],
       ['groups', '1000(redteam), 27(sudo — revoked)'],
-      ['handle', 'pr0sp3r0'],
+      ['handle', 'cipher'],
       ['name', 'Jordan Cole'],
       ['role', 'Penetration Tester / Red Team Operator'],
       ['based', 'Austin, TX (remote-friendly)'],
@@ -363,7 +351,7 @@ const commands = {
       `<span class="file-name">detection-notebook/</span> <span class="file-desc">Mapping offensive techniques to Sigma detection rules</span>`,
       `<span class="file-name">automation-toolkit/</span> <span class="file-desc">Python CLI utilities for auth testing &amp; enumeration</span>`,
     ]));
-    printLine('→ full source: <a class="link" href="#" target="_blank" rel="noopener">github.com/pr0sp3r0</a>', '');
+    printLine('→ full source: <a class="link" href="#" target="_blank" rel="noopener">github.com/cipher</a>', '');
     printBlank();
   },
 
@@ -375,7 +363,7 @@ const commands = {
       `<span class="file-name">2026-08-10-chained-web-exp.md</span>  <span class="file-desc">Exposed API to authenticated RCE via chained misconfigs</span>`,
       `<span class="file-name">2026-08-08-wifi-field-notes.md</span> <span class="file-desc">Wireless recon &amp; WPA/WPA2 lab testing workflow</span>`,
     ]));
-    printLine('→ read more: <a class="link" href="#" target="_blank" rel="noopener">pr0sp3r0.dev/writeups</a>', '');
+    printLine('→ read more: <a class="link" href="#" target="_blank" rel="noopener">cipher.dev/writeups</a>', '');
     printBlank();
   },
 
@@ -384,10 +372,10 @@ const commands = {
     printBlank();
     appendNode(renderBadgeMarquee(CERTS));
     printHTML(table(CERTS.map(c => [
-       c.status === 'done'
+      c.status === 'done'
         ? '<span class="status-done">[DONE]</span>'
         : '<span class="status-prog">[PROG]</span>',
-        c.name,
+      c.name,
     ])));
     printBlank();
   },
@@ -396,8 +384,8 @@ const commands = {
     printLine('contact --info', 'dim');
     printBlank();
     printHTML(table([
-      ['email', '<a class="link" href="mailto:pr0sp3r0@example.com">pr0sp3r0@example.com</a>'],
-      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/pr0sp3r0</a>'],
+      ['email', '<a class="link" href="mailto:cipher@example.com">cipher@example.com</a>'],
+      ['github', '<a class="link" href="#" target="_blank" rel="noopener">github.com/cipher</a>'],
       ['linkedin', '<a class="link" href="#" target="_blank" rel="noopener">linkedin.com/in/jordan-cole</a>'],
       ['pgp', '4A3F 9C21 8B0D 77E4 12FA  9931 0CDE 55A2 66F1 90B3'],
     ]));
@@ -418,7 +406,7 @@ const commands = {
       return;
     }
     document.documentElement.setAttribute('data-theme', name);
-    localStorage.setItem('pr0sp3r0-theme', name);
+    localStorage.setItem('cipher-theme', name);
     themeLabel.textContent = name;
     printLine(`theme set to ${name}.`, 'accent');
     printBlank();
@@ -451,7 +439,7 @@ const commands = {
   },
 
   sudo() {
-    printLine('pr0sp3r0 is not in the sudoers file. This incident will be reported.', 'err');
+    printLine('cipher is not in the sudoers file. This incident will be reported.', 'err');
     printLine('(it will not actually be reported. nice try though.)', 'dim');
     printBlank();
   },
