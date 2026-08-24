@@ -238,6 +238,18 @@ table.term-table { border-collapse: collapse; margin: 4px 0 10px; width: 100%; }
 table.term-table td { padding: 2px 14px 2px 0; vertical-align: top; color: var(--fg); }
 table.term-table td.key { color: var(--fg-dim); white-space: nowrap; }
 
+.status-done {
+  color: #3ddc72;
+  text-shadow: 0 0 6px rgba(61, 220, 114, 0.5);
+  font-weight: 700;
+}
+
+.status-prog {
+  color: #ff5c5c;
+  text-shadow: 0 0 6px rgba(255, 92, 92, 0.5);
+  font-weight: 700;
+}
+
 ul.term-list { list-style: none; margin: 2px 0 10px; padding: 0; }
 ul.term-list li { padding-left: 1.2em; position: relative; margin-bottom: 2px; }
 ul.term-list li::before { content: "├─"; position: absolute; left: 0; color: var(--fg-dim); }
