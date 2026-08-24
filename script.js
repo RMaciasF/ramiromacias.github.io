@@ -89,7 +89,7 @@ function list(items) {
 // Certification badges — generic seal-style SVG, no vendor logos
 // ============================================================
 const CERTS = [
-  { acronym: 'A+',  name: 'Web Exploitation Track', status: 'done', image: 'badges/A+.png',
+  { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png',
     url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
    { acronym: 'CySA+',  name: 'CompTIA CySA+', status: 'done', image: 'badges/CySA+.png',
     url: 'https://www.credly.com/badges/1a16b760-e1b2-418c-8756-26edb78af781' },
