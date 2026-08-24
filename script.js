@@ -111,6 +111,7 @@ const CERTS = [
     url: 'https://aspen.eccouncil.org/VerifyBadge?type=certification&a=YoXmFJcgHlD9WFZZGFJfDRPWKCFabqAIfw5ppIMq8yc=' },
   { acronym: 'eJPT',   name: 'Junior Penetration Tester', status: 'done', image: 'badges/eJPT.svg',
     url: 'https://certs.ine.com/71c5d2aa-9503-46b1-829b-a6307f0f7067#acc.K4MICrox' },
+];
 
 // Fallback shown inline if a badge image file is missing (404) — keeps the
 // layout intact instead of showing a broken-image icon.
