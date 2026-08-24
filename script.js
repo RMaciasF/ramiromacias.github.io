@@ -89,16 +89,29 @@ function list(items) {
 // Certification badges — generic seal-style SVG, no vendor logos
 // ============================================================
 const CERTS = [
-  { acronym: 'WX-1',  name: 'Web Exploitation Track', status: 'done', image: 'badges/wx1.svg',
-    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000001' },
-  { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg',
+   { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png',
+    url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
+   { acronym: 'CySA+',  name: 'CompTIA CySA+', status: 'done', image: 'badges/CySA+.png',
+    url: 'https://www.credly.com/badges/1a16b760-e1b2-418c-8756-26edb78af781' },
+  { acronym: 'CPTS',  name: 'HTB Certified Penetration Testing Specialist', status: 'in-progress', image: 'badges/CPTS.png',
     url: '' },
-  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg',
-    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000002' },
-  { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/pos.svg',
-    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000003' },
-  { acronym: 'DEP',   name: 'Detection Engineering — SIEM &amp; Threat Hunting', status: 'done', image: 'badges/dep.svg',
-    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000004' },
+   { acronym: 'CCNA',  name: 'Cisco Certified Network Associate', status: 'in-progress', image: 'badges/CCNA.png',
+    url: '' },
+  { acronym: 'SecurityX',   name: 'CompTIA SecurityX (CASP+)', status: 'done', image: 'badges/SecurityX.png',
+    url: 'https://www.credly.com/badges/fa441899-f433-4bee-8b5e-84b71be45f95' },
+   { acronym: 'eWPT',   name: 'Web Penetration Tester', status: 'done', image: 'badges/eWPT.svg',
+    url: 'https://certs.ine.com/43193ba4-0982-41ef-bd27-111d1d4157ab#acc.dHha12tE' },
+  { acronym: 'Security+',   name: 'CompTIA Security+', status: 'done', image: 'badges/Security+.png',
+    url: 'https://www.credly.com/badges/4037d0a9-6790-4b8c-b04c-b374d5ec27c9' },
+  { acronym: 'CCSK',   name: 'Certificate of Cloud Security Knowledge', status: 'done', image: 'badges/CCSK.png',
+    url: 'https://www.credly.com/badges/01291845-f6b2-48db-97fd-b284561694f5' },
+  { acronym: 'Pentest+',   name: 'CompTIA Pentest+', status: 'done', image: 'badges/Pentest+.png',
+    url: 'https://www.credly.com/badges/4a4a39b2-53d4-452e-934f-eae9ca1048ca' },
+  { acronym: 'CEH(Practical)',   name: 'Certified Ethical Hacker (Practical)', status: 'done', image: 'badges/CEH(Practical).png',
+    url: 'https://aspen.eccouncil.org/VerifyBadge?type=certification&a=YoXmFJcgHlD9WFZZGFJfDRPWKCFabqAIfw5ppIMq8yc=' },
+  { acronym: 'eJPT',   name: 'Junior Penetration Tester', status: 'done', image: 'badges/eJPT.svg',
+    url: 'https://certs.ine.com/71c5d2aa-9503-46b1-829b-a6307f0f7067#acc.K4MICrox' },
+];
 ];
 
 // Fallback shown inline if a badge image file is missing (404) — keeps the
