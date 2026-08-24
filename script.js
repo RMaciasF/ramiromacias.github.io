@@ -384,8 +384,10 @@ const commands = {
     printBlank();
     appendNode(renderBadgeMarquee(CERTS));
     printHTML(table(CERTS.map(c => [
-      c.status === 'done' ? '[DONE]' : '[PROG]',
-      c.name,
+       c.status === 'done'
+        ? '<span class="status-done">[DONE]</span>'
+        : '<span class="status-prog">[PROG]</span>',
+        c.name,
     ])));
     printBlank();
   },
